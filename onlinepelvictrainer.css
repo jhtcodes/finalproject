@@ -1,8 +1,6 @@
 body {
-    background-color: #D9D9D9;
+    background-color: #d9d9d9;
     font-family: Lato, sans-serif;
-    background-image: "./pelvis-pic.jpg";
-    margin: 0;
 }
 
 .logo {
@@ -13,7 +11,9 @@ body {
 
 header {
     display: flex;
-    justify-content:center;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
 }
 
 .slogan {
@@ -21,26 +21,16 @@ header {
     font-style: italic;
     background: white;
     font-size: medium;
-    text-align: center;
-}
-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 40px;
-}
-nav li {
-    list-style-type: none;
-}
-
-nav li a {
-    text-decoration: none;
-    font-family: Lato, sans-serif;
-    color: #357366;
+    text-align: left;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 10px;
 }
 
 .base-timer {
     position: relative;
+    left: 200px;
+    top: 20px;
     height: 300px;
     width: 300px;
 }
@@ -55,18 +45,21 @@ nav li a {
     stroke: #C66547;
 }
 
-.set-timer {
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
-}
-
 .start-button {
     background-color: #BDD9BF;
     color: #0E3B43;
     font-weight: bold;
     position: relative;
+    font-size: larger;
+    text-transform: uppercase;
 }
+
+.set-timer {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
 .squeeze-time {
     background-color: #C66547;
     color: white;
@@ -95,19 +88,32 @@ nav li a {
 }
 
 .bookmark {
-    position: relative;
+    position: absolute;
+    bottom: 400px;
+    left: 600px;
+    z-index: 3;
     background-color:#C66547;
+    border: solid 2px white;
+    width: 150px;
+    font-size: small;
 }
 
 .bookmark-icon img {
-    width: 40px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 .how-to-use {
     background-color: white;
+    padding-left: 10px;
+}
+
+h6 {
     font-size: medium;
-    
+}
+
+.how-to-use p {
+    font-size: small;
 }
 
 footer {
