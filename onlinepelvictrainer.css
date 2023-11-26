@@ -1,0 +1,119 @@
+body {
+    background-color: #D9D9D9;
+    font-family: Lato, sans-serif;
+    background-image: "./pelvis-pic.jpg";
+    margin: 0;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    background-color: #BDD9BF;
+}
+
+header {
+    display: flex;
+    justify-content:center;
+}
+
+.slogan {
+    font-family: Lato, san-serif;
+    font-style: italic;
+    background: white;
+    font-size: medium;
+    text-align: center;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+nav li {
+    list-style-type: none;
+}
+
+nav li a {
+    text-decoration: none;
+    font-family: Lato, sans-serif;
+    color: #357366;
+}
+
+.base-timer {
+    position: relative;
+    height: 300px;
+    width: 300px;
+}
+
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+
+.base-timer__path-elapsed {
+    stroke-width: 10px;
+    stroke: #C66547;
+}
+
+.set-timer {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.start-button {
+    background-color: #BDD9BF;
+    color: #0E3B43;
+    font-weight: bold;
+    position: relative;
+}
+.squeeze-time {
+    background-color: #C66547;
+    color: white;
+}
+
+.relax-time {
+    background-color:#357366;
+    color: white;
+}
+.repetitions {
+    background-color: #0E3B43;
+    color: white;
+}
+
+.set-timer {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.reminder {
+    background-color: white;
+    padding: 5px;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.bookmark {
+    position: relative;
+    background-color:#C66547;
+}
+
+.bookmark-icon img {
+    width: 40px;
+    height: 30px;
+}
+
+.how-to-use {
+    background-color: white;
+    font-size: medium;
+    
+}
+
+footer {
+    background-color: #0E3B43;
+    color: white;
+    padding: 10px;
+    font-family: Lato, sans-serif;
+    font-style: italic;
+}
