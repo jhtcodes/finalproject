@@ -12,27 +12,28 @@ body {
 header {
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 200px;
+    align-items: stretch;
+    background: #BDD9BF;
 }
 
 .slogan {
-    font-family: Lato, san-serif;
     font-style: italic;
     background: white;
     font-size: medium;
     text-align: left;
-    padding-top: 65px;
-    padding-bottom: 65px;
-    padding-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    border: 10px solid #BDD9BF;
 }
 
-.base-timer {
+.timer-app {
+    padding-top: 2rem;
+    height: 400px;
+    width: 400px;
     position: relative;
-    left: 200px;
-    top: 20px;
-    height: 300px;
-    width: 300px;
+    left: 20%;
 }
 
 .base-timer__circle {
@@ -49,15 +50,8 @@ header {
     background-color: #BDD9BF;
     color: #0E3B43;
     font-weight: bold;
-    position: relative;
     font-size: larger;
     text-transform: uppercase;
-}
-
-.set-timer {
-    padding-top: 100px;
-    display: flex;
-    justify-content: center;
 }
 
 .squeeze-time {
@@ -75,22 +69,28 @@ header {
 }
 
 .set-timer {
+    padding-top: 5rem;
     display: flex;
     justify-content: space-between;
     padding-bottom: 20px;
 }
 
+.set-timer button {
+    text-align: left;
+}
+
 .reminder {
     background-color: white;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
     font-size: 12px;
     font-style: italic;
 }
 
 .bookmark {
-    position: absolute;
-    bottom: 400px;
-    left: 600px;
+    position: relative;
+    left: 80%;
+    top: 38%;
+    padding: 1px 10px 5px 10px;
     z-index: 3;
     background-color:#C66547;
     border: solid 2px white;
@@ -99,9 +99,10 @@ header {
 }
 
 .bookmark-icon img {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
+
 
 .how-to-use {
     background-color: white;
@@ -122,4 +123,46 @@ footer {
     padding: 10px;
     font-family: Lato, sans-serif;
     font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .bookmark {
+        display: none;
+    }
+}
+
+@media (min-width: 960px) {
+    .set-timer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 50px;
+        width: 300px;
+        position: relative;
+        top: 20%;
+        left: 10%;
+        font-size: 40px;
+    }
+    
+    .timer-app {
+        height: 400px;
+        width: 400px;
+        position: static;
+        padding-left: 200px;
+    }
+
+    .set-timer, .timer-app {
+        display: inline-block;
+    }
+    .reminder {
+        position: absolute;
+        bottom: 58%;
+        right: 50%;
+        width: 600px;
+        height: 50px;
+        padding: 5px 10px 5px 10px;
+        background-color: #0E3B43;
+        border: 3px solid white;
+        color: white;
+    }
 }
