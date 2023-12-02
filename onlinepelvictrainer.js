@@ -15,26 +15,22 @@ const repetitions = document.querySelector('#rep-number')
 const squeezeBtn = document.querySelector('.squeeze-btn')
 const relaxBtn = document.querySelector('.relax-btn')
 const repetitionBtn = document.querySelector('.repetitions-btn')
-const onRepeat = document.querySelector('#rep-number')
 const transitionBar = document.querySelector('.timer-bar')
 const transitionBarProgress = document.querySelector('.timer-bar-progress')
 const timeSpan = document.querySelector('.time')
 
-startBtn.addEventListener("click", function () {
-	console.log("start button working")
-	RepeatTheSet ()
-})
+startBtn.addEventListener("click", startCycle);
+
+function startCycle() {
+	RepeatTheSet();
+}
 
 function RepeatTheSet () {
-	let RepeatCounter = onRepeat.value;
-	RepeatCounter--;
-	
-	if (RepeatCounter =>1) {
-		numbersDown ();
-	} else {
-		alert("completed task today")
-	}
-}
+	const repeatCounter = repetitions.value;
+	for (let i = 0; i < repeatCounter; i++) {
+		numbersDown();
+		numbersUp();
+}}
 
 function numbersDown () {
 	let intervalFirst = squeezeTime.value;
@@ -46,7 +42,6 @@ function numbersDown () {
 			clearInterval(countDown)
 			transitionBar.style.width = "0%";
 			timeSpan.innerHTML = "0s"
-			numbersUp ()
 		} else {if (intervalFirst >= 1) {
 			transitionBar.style.width = transitionBarWidth + "%"
 			timeSpan.innerHTML = intervalFirst + 's'
@@ -66,31 +61,35 @@ function numbersUp () {
 		} else if (count >= relaxTime.value) { 
 			clearInterval(countUp)
 			transitionBar.style.width = "100%";
-			timeSpan.innerHTML = relaxTime.value + 's'
-		} 
+			timeSpan.innerHTML = relaxTime.value + 's';
+		}
 }, 1000);
 }
 
+squeezeBtn.addEventListener("click", addSqueezeTimeToSqueeze)
 
-squeezeBtn.addEventListener("click", addSqueezeTimeToSqueeze())
 function addSqueezeTimeToSqueeze() {
 	console.log('squeeze btn working')
+	const squeezeDisplay = document.querySelector('#squeeze')
+	squeezeDisplay.innerHTML = ''
+	squeezeDisplay.innerHTML = '<li id="squeeze">' + 'Squeeze: ' + squeezeTime.value+ 's' + '</li>'
 }
-relaxBtn.addEventListener("click", function () {
-	console.log("relax button working")
-})
+
+relaxBtn.addEventListener("click", addRelaxTimeToDisplay)
+
+function addRelaxTimeToDisplay() {
+	console.log('relax btn working')
+	const relaxDisplay = document.querySelector('#relax')
+	relaxDisplay.innerHTML = ''
+	relaxDisplay.innerHTML = '<li id="relax">' + 'Relax: ' + relaxTime.value + 's' + '</li>'
+}
 
 
-repetitionBtn.addEventListener("click", function () {
+repetitionBtn.addEventListener("click", addRepstoDisplay)
+
+function addRepstoDisplay() {
 	console.log("rep button working")
-})
-
-
-// function repetitionTimer () {
-// 	if (currentRepetition >= repetitions) {
-// 		return;
-// 	}
-// 	setTimeouut(() => {
-// 		transitionBar.computedStyleMap.
-// 	})
-// }
+	const repDisplay = document.querySelector('#repeat')
+	repDisplay.innerHTML = ''
+	repDisplay.innerHTML = '<li id="repeat">' + 'Repeat: ' + repetitions.value + ' times' + '</li>'
+}

@@ -110,6 +110,9 @@ ul {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+li {
+    font-size: 14px;
+}
 input:focus {
     background-color:#d9d9d9;
 }
