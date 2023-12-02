@@ -15,31 +15,29 @@
         </section>
     </header>
     <main>
-        <section class="timer">
-        </section>
-       <section class="timer-app">
-        <div class="base-timer">
-          <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <g class="base-timer__circle">
-              <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
-            </g>
-          </svg>
-          <span>
-            <!-- Remaining time label -->
-          </span>
-          <button class="start-button">Start</button>
-        </div>
-        <aside class="set-timer">
-        <input type="number-squeeze"> <button class="squeeze-time">Set Squeeze Time</button>
-        <input type="number" class="number-relax"> <button class="relax-time">Set Relax Time</button>
-        <input type ="number"> <button class="repetitions">Set Repetitions</button>
-    </aside>
-       </section>
-        <aside class="reminder">
-            <p class="reminder-content">A reminder the best way to find out whether you complete your pelvic floor exercises appropriate for you is to seek advice from a pelvic floor physiotherapist.</p>
-        </aside>
         <aside class="bookmark">
             <p class="bookmark-content">Bookmark this page <span class="bookmark-icon"><img src="./bookmark-icon.PNG" alt="bookmark-icon"></span>on your mobile, tablet, laptop or desktop for easy access to complete your pelvic floor exercises. </p>
+        </aside>
+       <section class= "timer-app">
+            <p class="seconds-display"><span class="time"></span></p>
+            <div class="timer-bar"></div>
+            <div class="timer-bar-progress"></div>
+        <button class="start-button">Start</button>
+       </section>
+        <aside class="set-timer">
+            <ul class="value-set">
+                <li id="squeeze">Squeeze:</li>
+                <li id="relax">Relax:</li>
+                <li id="repeat">Repeat:</li>
+            </ul>
+            <ul class="lists">
+                <li><input type="text" id="squeeze-number" placeholder="Enter seconds"> <button class="squeeze-btn">Set Squeeze Time</button></li>
+                <li><input type="text" id="relax-number" placeholder="Enter seconds"> <button class="relax-btn">Set Relax Time</button></li>
+                <li><input type ="text" id="rep-number" placeholder="Enter repetition"><button class="repetitions-btn">Set Repetitions</button></li>
+            </ul>
+        </aside>
+        <aside class="reminder">
+            <p class="reminder-content">A reminder the best way to find out whether you complete your pelvic floor exercises appropriate for you is to seek advice from a pelvic floor physiotherapist.</p>
         </aside>
         <article class="how-to-use">
             <h6> How to Use the Online Pelvic Floor Trainer</h6>
