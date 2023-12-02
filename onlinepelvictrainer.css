@@ -14,6 +14,7 @@ header {
     justify-content: center;
     align-items: stretch;
     background: #BDD9BF;
+    width: 100%;
 }
 
 .slogan {
@@ -29,21 +30,16 @@ header {
 }
 
 .timer-app {
-    padding-top: 2rem;
-    height: 400px;
-    width: 400px;
-    position: relative;
-    left: 20%;
+    padding-top: 3rem;
+    padding-left: 2rem;
+
 }
 
-.base-timer__circle {
-    fill: none;
-    stroke: none;
-}
-
-.base-timer__path-elapsed {
-    stroke-width: 10px;
-    stroke: #C66547;
+#timer-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #0E3B43;
 }
 
 .start-button {
@@ -52,50 +48,79 @@ header {
     font-weight: bold;
     font-size: larger;
     text-transform: uppercase;
+    border-radius: 7px;
+    margin-top: 1rem;
 }
 
-.squeeze-time {
+.start-button:hover {
     background-color: #C66547;
     color: white;
 }
 
-.relax-time {
+
+.squeeze-btn {
+    background-color: #C66547;
+    color: white;
+}
+
+.relax-btn {
     background-color:#357366;
     color: white;
 }
-.repetitions {
+.repetitions-btn {
     background-color: #0E3B43;
     color: white;
 }
 
 .set-timer {
-    padding-top: 5rem;
-    display: flex;
-    justify-content: space-between;
+    padding-top: 4rem;
+    display: inline-block;
     padding-bottom: 20px;
 }
 
+input {
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
 .set-timer button {
-    text-align: left;
+    text-align: center;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    display: none;
+}
+
+input:focus {
+    background-color:#d9d9d9;
 }
 
 .reminder {
     background-color: white;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 10px 10px 10px;
     font-size: 12px;
     font-style: italic;
 }
 
 .bookmark {
-    position: relative;
-    left: 80%;
-    top: 38%;
+    position: absolute;
+    left: 70%;
+    top: 30%;
     padding: 1px 10px 5px 10px;
     z-index: 3;
+    border-radius: 6px;
     background-color:#C66547;
-    border: solid 2px white;
+    border: solid 2px #0E3B43;
+    color: rgb(30, 29, 29);
     width: 150px;
     font-size: small;
+}
+
+.bookmark:hover{
+    background-color: #cf8974;
+    color: white;
 }
 
 .bookmark-icon img {
@@ -123,6 +148,7 @@ footer {
     padding: 10px;
     font-family: Lato, sans-serif;
     font-style: italic;
+    width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -131,38 +157,41 @@ footer {
     }
 }
 
+@media (max-width: 320px) {
+    #timer-circle {
+        width: 150px;
+        height: 150px;
+    }
+}
 @media (min-width: 960px) {
     .set-timer {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        gap: 50px;
+        gap: 20px;
         width: 300px;
-        position: relative;
-        top: 20%;
-        left: 10%;
-        font-size: 40px;
+        margin-left: 1rem;
     }
     
-    .timer-app {
-        height: 400px;
-        width: 400px;
-        position: static;
-        padding-left: 200px;
-    }
-
-    .set-timer, .timer-app {
-        display: inline-block;
-    }
     .reminder {
-        position: absolute;
-        bottom: 58%;
-        right: 50%;
         width: 600px;
-        height: 50px;
+        height: 150px;
         padding: 5px 10px 5px 10px;
         background-color: #0E3B43;
         border: 3px solid white;
         color: white;
+    }
+
+    main {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .bookmark {
+        position: static;
+    }
+    
+    footer {
+        margin-top: 2rem;
     }
 }
