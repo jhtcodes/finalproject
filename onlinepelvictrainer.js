@@ -19,7 +19,11 @@ const transitionBar = document.querySelector('.timer-bar')
 const transitionBarProgress = document.querySelector('.timer-bar-progress')
 const timeSpan = document.querySelector('.time')
 
-startBtn.addEventListener("click", startCycle);
+let currentIteration = 0;
+let totalIterations;
+
+// 1. press start to start the whole cycle
+startBtn.addEventListener("click", startCycle); 
 
 function startCycle() {
 	RepeatTheSet();
@@ -27,13 +31,33 @@ function startCycle() {
 
 function RepeatTheSet () {
 	const repeatCounter = repetitions.value;
-	for (let i = 0; i < repeatCounter; i++) {
-		numbersDown();
-		numbersUp();
-}}
+	console.log("repeat counter: " + repeatCounter)
+	totalIterations = repeatCounter; 
+	// changed to totalIterations - into a global variable
+	runSequence();
+}
 
-function numbersDown () {
-	let intervalFirst = squeezeTime.value;
+let argumentFunction1 = function () {
+	console.log("NumberUp callback");
+	numbersUp(argumentFunction2);
+};
+
+let argumentFunction2 = function () {
+	console.log("run the sequence callback");
+	currentIteration++;
+	runSequence();
+};
+
+function runSequence() {
+	if (currentIteration >= totalIterations) {
+		return;
+	}
+	numbersDown(argumentFunction1);
+}
+
+function numbersDown (argumentFunction1) {
+	console.log('numbersDown function called');
+	let intervalFirst = parseInt(squeezeTime.value, 10);
 	const countDown = setInterval(() => {
 		intervalFirst --;
 		let transitionBarWidth = intervalFirst / squeezeTime.value * 100
@@ -42,6 +66,7 @@ function numbersDown () {
 			clearInterval(countDown)
 			transitionBar.style.width = "0%";
 			timeSpan.innerHTML = "0s"
+			argumentFunction1(); //once countdown is complete - it will callback on argumentFunction1 *line 36
 		} else {if (intervalFirst >= 1) {
 			transitionBar.style.width = transitionBarWidth + "%"
 			timeSpan.innerHTML = intervalFirst + 's'
@@ -49,19 +74,23 @@ function numbersDown () {
 }, 1000)}
 ;
 
-function numbersUp () {
+function numbersUp (argumentFunction2) {
+	console.log("numbersDown finished, numbersUp called")
 	let intervalSecond = relaxTime.value;
+	console.log(intervalSecond + " second interval")
 	let count = 0;
 	const countUp = setInterval(() => {
+		console.log ("count: ", count)
 		count++;
 		let transitionBarWidth = count / relaxTime.value * 100
 		if (count < intervalSecond) {
 			transitionBar.style.width = transitionBarWidth + "%"
-			timeSpan.innerHTML = intervalSecond + 's'
+			timeSpan.innerHTML = count + 's'
 		} else if (count >= relaxTime.value) { 
 			clearInterval(countUp)
 			transitionBar.style.width = "100%";
-			timeSpan.innerHTML = relaxTime.value + 's';
+			timeSpan.innerHTML = count + 's';
+			argumentFunction2(); // once numbersUp complete, callback here
 		}
 }, 1000);
 }
