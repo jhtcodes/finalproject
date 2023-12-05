@@ -1,0 +1,64 @@
+body {
+    background-color: #D9D9D9;
+    font-family: Lato, sans-serif;
+}
+
+.logo {
+    background-color: #357366;
+    width: 200px;
+    height: 200px;
+    background-color: #BDD9BF;
+}
+
+header {
+    background-color: #BDD9BF;
+}
+
+.main-menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+.main-menu li {
+    list-style-type: none;
+}
+
+.main-menu li a {
+    text-decoration: none;
+    font-family: Lato, sans-serif;
+    color: #357366;
+}
+
+.about-PFphysio img {
+    width: 200px;
+    height:200px;
+    object-fit: contain;
+}
+
+.about-PFphysio, .pelvic-floor-anatomy-text {
+    font-size: smaller;
+}
+
+.conditions li, .conditions li p {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+h5 {
+   font-size:large; 
+   color: #357366;
+   background-color:#BDD9BF;
+}
+
+footer {
+    background-color: #0E3B43;
+    color: white;
+    padding: 10px;
+    font-family: Lato, sans-serif;
+    font-style: italic;
+    width: 99%;
+    flex-shrink: 0;
+}

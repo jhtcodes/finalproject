@@ -18,6 +18,9 @@ const repetitionBtn = document.querySelector('.repetitions-btn')
 const transitionBar = document.querySelector('.timer-bar')
 const transitionBarProgress = document.querySelector('.timer-bar-progress')
 const timeSpan = document.querySelector('.time')
+const smallBookmark = document.querySelector('.small-bookmark')
+const bookmarkDisplay = document.querySelector('.bookmark-content')
+const clickAway = document.querySelector('body')
 
 let currentIteration = 0;
 let totalIterations;
@@ -122,3 +125,17 @@ function addRepstoDisplay() {
 	repDisplay.innerHTML = ''
 	repDisplay.innerHTML = '<li id="repeat">' + 'Repeat: ' + repetitions.value + ' times' + '</li>'
 }
+
+smallBookmark.addEventListener('click', function() {
+	console.log('working star')
+	bookmarkDisplay.style.display = 'inline';
+})
+
+
+bookmarkDisplay.addEventListener('click', function() {
+	console.log('working click');
+	bookmarkDisplay.style.zIndex= '0';
+	bookmarkDisplay.style.backgroundColor= 'rgba(0,0,0,0)'
+	bookmarkDisplay.style.color='rgba(0,0,0,0)'
+	bookmarkDisplay.style.border='none'
+})
