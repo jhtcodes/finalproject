@@ -1,6 +1,16 @@
+html, body {
+    height: 100vh;
+}
+
 body {
     background-color: #D9D9D9;
     font-family: Lato, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+header, main {
+    flex: 1 0 auto;
 }
 
 .logo {
@@ -30,10 +40,30 @@ header {
     color: #357366;
 }
 
-.about-PFphysio img {
+img {
     width: 200px;
     height:200px;
     object-fit: contain;
+}
+
+.accordion-header {
+    background-color: #BDD9BF;
+}
+
+.accordion-button:focus {
+    background-color: #BDD9BF;
+    color: #0E3B43;
+    border-color: #D9D9D9;
+}
+
+.accordion-button:hover {
+    background-color:#D9D9D9;
+
+}
+
+.accordion-button:not(.collapsed) {
+    background-color:#357366;
+    color: white;
 }
 
 .about-PFphysio, .pelvic-floor-anatomy-text {
@@ -41,10 +71,8 @@ header {
 }
 
 .conditions li, .conditions li p {
-    display: flex;
-    justify-content:flex-start;
-    align-items: center;
-    gap: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 h5 {
@@ -61,4 +89,8 @@ footer {
     font-style: italic;
     width: 99%;
     flex-shrink: 0;
+}
+
+.bootstrap-power{
+    font-size: xx-small;
 }

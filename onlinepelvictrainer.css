@@ -1,15 +1,17 @@
+html, body {
+    height: 100vh;
+}
+
 body {
     background-color: #d9d9d9;
     font-family: Lato, sans-serif;
     display: flex;
     flex-direction: column;
     align-items:center;
-    min-height: 100vh;
-    margin: 0;
 }
 
-.main {
-    flex: 1;
+header, main, footer {
+    flex: 1 0 auto;
 }
 
 .logo {
@@ -27,9 +29,8 @@ header {
 }
 
 .slogan {
-    font-style: italic;
-    background: white;
-    font-size: medium;
+    background: #BDD9BF;
+    font-size: small;
     text-align: left;
     padding-left: 20px;
     padding-right: 20px;
@@ -38,10 +39,19 @@ header {
     border: 10px solid #BDD9BF;
 }
 
+.main-menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+
 .main-menu li a{
     text-decoration: none;
     color:#0E3B43;
+    font-size: medium;
 }
+
 
 .timer-app {
     margin-top: 3rem;
@@ -144,8 +154,8 @@ input:focus {
 }
 
 .small-bookmark {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     position: relative;
     background-color: white;
     border:#0E3B43 solid 1px;
@@ -200,17 +210,27 @@ footer {
     background-color: #0E3B43;
     color: white;
     padding: 10px;
-    font-family: Lato, sans-serif;
     font-style: italic;
-    width: 99%;
+    width: 100%;
     flex-shrink: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
 
 @media (max-width: 768px) {
     .bookmark-container {
         display: none;
     }
+
+    .lists {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+    }
 }
+
 
 @media (min-width: 960px) {
     
