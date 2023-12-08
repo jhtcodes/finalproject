@@ -8,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items:center;
+    margin: 0;
 }
 
 header, main, footer {
@@ -28,7 +29,7 @@ header {
     width: 100%;
 }
 
-.slogan {
+.slogan-container {
     background: #BDD9BF;
     font-size: small;
     text-align: left;
@@ -37,6 +38,14 @@ header {
     display: flex;
     align-items: center;
     border: 10px solid #BDD9BF;
+}
+
+.slogan {
+    background-color: white;
+    padding: 5px;
+    border: #0E3B43 5px solid;
+    border-radius: 10px;
+    width: 90%;
 }
 
 .main-menu ul {
@@ -146,6 +155,8 @@ input:focus {
     padding: 5px 10px 10px 10px;
     font-size: 12px;
     font-style: italic;
+    border: 5px solid #0E3B43;
+
 }
 
 .small-icon {
@@ -161,6 +172,7 @@ input:focus {
     border:#0E3B43 solid 1px;
     position: relative;
     left: 10px;
+    bottom: 10%;
     border-radius: 6px;
     z-index: 3;
 }
@@ -195,7 +207,7 @@ input:focus {
 
 .how-to-use {
     background-color: white;
-    padding-left: 10px;
+    margin: 2px;
 }
 
 h6 {
@@ -217,6 +229,7 @@ footer {
     left: 0;
     bottom: 0;
 }
+
 
 @media (max-width: 768px) {
     .bookmark-container {
