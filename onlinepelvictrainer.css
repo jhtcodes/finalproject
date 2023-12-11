@@ -61,6 +61,41 @@ header {
     font-size: medium;
 }
 
+.end-function-modal {
+    background: #BDD9BF;
+    width: 50%;
+    max-height: 150px;
+    border: 4px solid #0E3B43;
+    border-radius: 5px;
+    position: absolute;
+    left: 25%;
+    z-index: 10;
+    padding: 20px;
+    display: none;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.close-btn {
+    color: white;
+    background-color: #C66547;
+    border-radius: 10px;
+}
+
+.next-message {
+    font-weight: bolder;
+    text-align: center;
+}
+
+.close-refresh {
+    font-size: xx-small;
+}
 
 .timer-app {
     margin-top: 3rem;
@@ -228,6 +263,17 @@ footer {
     flex-shrink: 0;
     left: 0;
     bottom: 0;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
 }
 
 

@@ -21,6 +21,9 @@ const timeSpan = document.querySelector('.time')
 const smallBookmark = document.querySelector('.small-bookmark')
 const bookmarkDisplay = document.querySelector('.bookmark-content')
 const clickAway = document.querySelector('body')
+const modalDisplay = document.querySelector('.end-function-modal')
+const closeRefreshPage = document.querySelector('.close-btn')
+const overlay = document.querySelector('.overlay')
 
 let currentIteration = 0;
 let totalIterations;
@@ -53,6 +56,7 @@ let argumentFunction2 = function () {
 
 function runSequence() {
 	if (currentIteration >= totalIterations) {
+		showModal();
 		return;
 	}
 	numbersDown(argumentFunction1);
@@ -139,3 +143,15 @@ bookmarkDisplay.addEventListener('click', function() {
 	bookmarkDisplay.style.color='rgba(0,0,0,0)'
 	bookmarkDisplay.style.border='none'
 })
+
+function showModal() {
+	modalDisplay.style.display = "block";
+	overlay.style.display = "block";
+}
+
+function closeModal() {
+	modalDisplay.style.display = "none";
+	overlay.style.display = "none";
+}
+
+closeRefreshPage.addEventListener("click", closeModal)

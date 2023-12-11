@@ -9,7 +9,7 @@ body {
     flex-direction: column;
 }
 
-header, main {
+main {
     flex: 1 0 auto;
 }
 
@@ -51,20 +51,14 @@ img {
     background-color: #BDD9BF;
 }
 
-.accordion-button:focus {
-    background-color: #BDD9BF;
-    color: #0E3B43;
-    border-color: #D9D9D9;
+
+.accordion-button {
+    background-color: #357366;
+    color: white;
 }
 
 .accordion-button:hover {
     background-color:#D9D9D9;
-
-}
-
-.accordion-button:not(.collapsed) {
-    background-color:#357366;
-    color: white;
 }
 
 .about-PFphysio, .pelvic-floor-anatomy-text {
@@ -111,4 +105,11 @@ footer {
 
 .bootstrap-power a:hover {
     color: #D9D9D9;
+}
+
+@media (max-width: 768px) {
+    .conditions li {
+        display: flex;
+        flex-direction: column;
+    }
 }
