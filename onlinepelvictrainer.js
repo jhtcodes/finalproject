@@ -152,6 +152,7 @@ function showModal() {
 function closeModal() {
 	modalDisplay.style.display = "none";
 	overlay.style.display = "none";
+	currentIteration = "0";
 }
 
 closeRefreshPage.addEventListener("click", closeModal)
